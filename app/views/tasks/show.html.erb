@@ -1,0 +1,12 @@
+<h2><%= @task.title %></h2>
+<%= link_to "Edit the task", edit_task_path, class: "btn btn-dark" %></li>
+<%= link_to "Delete the task", 
+            task_path(@task),
+            method: :delete,
+            data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<div class="alert alert-primary mt-4">
+<p><%= @task.details %></p>
+<p><%= @task.completed %></p>
+</div>
+
+<%= link_to '<i class="fas fa-undo-alt"></i> Back to list'.html_safe, tasks_path %>

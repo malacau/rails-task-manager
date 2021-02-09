@@ -1,0 +1,18 @@
+<h1>TODO LIST</h1>
+<div class="alert alert-primary mt-4">
+<ul>
+<% @tasks.each do |task| %>
+    
+    <% if task.completed %>
+        <li><%= link_to '<i class="far fa-square"></i>'.html_safe, completed_path(task), method: :patch %> <%= link_to task.title, task_path(task) %></li>
+    <% else %>
+        <li><%= link_to '<i class="fas fa-poop"></i>'.html_safe, completed_path(task), method: :patch %> <%= link_to task.title, task_path(task) %></li>
+    <% end %>
+<% end %>
+</ul>
+</div>
+<%= link_to "Add a task", new_task_path, class: "btn btn-primary" %>
+
+
+
+
